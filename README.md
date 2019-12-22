@@ -1,0 +1,2 @@
+# mergeSortC
+c merge sort 
