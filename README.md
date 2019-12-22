@@ -82,17 +82,21 @@ merge(sirali_dizi, sol1, orta1, sag1);
 
 
 // merge fonksiyonu bölünen dizideki elemanları karşılaştırma yaparak sıralar.
+
 void merge(int dizi[], int bas, int orta, int son)
 {
 int i, j, k;
 //Sol ve sağ dizi için değişkenler
+
 int a1 = orta - bas + 1;
 int a2 = son - orta;
 
 //Geçici dizilerimiz.
+
 int sol[a1], sag[a2];
 
 //for geçici dizilerimize elemanları atıyor.
+
 for (i = 0; i < a1; i++)
 sol[i] = dizi[bas + i];
 
@@ -100,22 +104,25 @@ for (j = 0; j < a2; j++)
 sag[j] = dizi[orta + 1+ j];
 
 //
-i = 0; //1. alt dizinin başlangıç indeksi
-j = 0; //2. alt dizinin başlangıç indeksi
-k = bas; //birleştirilmiş alt dizinin başlangıç indeksi
+i = 0;    //1. alt dizinin başlangıç indeksi
+j = 0;    //2. alt dizinin başlangıç indeksi
+k = bas;  //birleştirilmiş alt dizinin başlangıç indeksi
 
 //Birleştirme 
 //sol ve sağ dizide eleman oldukça while devam edicek.
+
 while (i < a1 && j < a2)// sol kısım ortaya sağ kısım bitişe gelene kadar.
 {
 
 //Sol ve sağ dizinin elemanları karşılaştırılır. Eğer sol küçük eşitse yeni dizinin ilk elemanı olur.
+
 if (sol[i] <= sag[j])
 {
 dizi[k] = sol[i];
 i++;
 }
 //Değilse sağ dizinin ilk elemanı yeni dizimizin ilk elemanı olur.
+
 else
 {
 dizi[k] = sag[j];
@@ -126,6 +133,7 @@ k++;//diğer indise geçilir.
 }
 
 //Eğer boşta eleman kaldıysa o elemanı atama işlemi yapıyor.
+
 while (i < a1)
 {
 dizi[k] = sol[i];
@@ -134,6 +142,7 @@ k++;
 }
 
 //Eğer boşta eleman kaldıysa o elemanı atama işlemi yapıyor.
+
 while (j < a2)
 {
 dizi[k] = sag[j];
